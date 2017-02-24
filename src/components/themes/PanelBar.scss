@@ -1,0 +1,12 @@
+@import "~react-toolbox/lib/colors";
+.appBar {
+  color: $palette-grey-700 !important;
+  background-color: $palette-grey-100 !important;
+}
+.leftIcon {
+  color: $palette-grey-700 !important;
+}
+.title {
+  margin-right: 2em;
+  flex-grow: 0 !important;
+}
