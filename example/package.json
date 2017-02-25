@@ -1,7 +1,7 @@
 {
   "name": "boiler-ui-example",
   "private": true,
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "the frontend for the boilerstack app",
   "main": "./src",
   "scripts": {
