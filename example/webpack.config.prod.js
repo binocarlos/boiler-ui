@@ -37,10 +37,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: [
-          path.resolve(__dirname, "src"),
-          path.resolve(__dirname, "node_modules/boiler_ui/src")
-        ],
+        exclude: /(node_modules)/,
         loader: 'babel'
       }, {
         test: /\.(scss|css)$/,
@@ -50,7 +47,7 @@ module.exports = {
   },
   postcss: [autoprefixer],
   sassLoader: {
-    data: '@import "./theme/_config.scss";',
+    data: '@import "./src/theme/_config.scss";',
     includePaths: [path.resolve(__dirname, './src')]
   },
   plugins: [
