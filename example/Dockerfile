@@ -1,8 +1,9 @@
-FROM binocarlos/yarn-base
+FROM node:7
 MAINTAINER kaiyadavenport@gmail.com
 WORKDIR /app
 ADD ./package.json /app/package.json
-RUN yarn install
+RUN npm install
 ADD . /app
-ENTRYPOINT ["yarn", "run"]
-CMD ["release:serve"]
+RUN npm run release
+ENTRYPOINT ["npm", "run"]
+CMD ["serve"]

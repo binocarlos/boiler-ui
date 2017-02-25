@@ -7,8 +7,7 @@
   "scripts": {
     "release": "NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config ./webpack.config.prod --colors --profile --progress",
     "watch": "NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
-    "serve": "ecstatic --root dist",
-    "release:serve": "npm run release && npm run serve"
+    "serve": "ecstatic --root dist"
   },
   "dependencies": {
     "boiler-ui": "^1.0.4",
@@ -33,6 +32,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-2": "^6.13.0",
     "css-loader": "^0.26.1",
+    "ecstatic": "^2.1.0",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.7.0",
