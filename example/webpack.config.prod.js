@@ -18,7 +18,7 @@ module.exports = {
     app: './src/app/index.js'
   },
   output: {
-    path: path.join(__dirname, 'example/dist'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/'
   },
