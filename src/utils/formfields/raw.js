@@ -25,7 +25,8 @@ const raw = (settings = {}) => {
     title: settings.title || ucfirst(settings.name),
     get: settings.get || getPathnameValue(settings.name),
     compare: (a, b) => a === b,
-    getComponent: settings.getComponent
+    getComponent: settings.getComponent,
+    group: settings.group
   }
 }
 

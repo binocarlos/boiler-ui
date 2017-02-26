@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "common ui components for frontend apps",
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
+    "build": "cross-env NODE_ENV=production npm run sass && npm run babel",
     "babel": "babel ./src --out-dir ./lib",
     "clean": "rimraf ./lib/*",
     "prebuild": "npm run clean",

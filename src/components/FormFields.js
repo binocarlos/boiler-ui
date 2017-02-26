@@ -26,7 +26,9 @@ class FormFields extends Component {
               error: field.error,
               value: field.value,
               update: value => this.props.update(field.name, value),
-              touch: () => this.props.touch(field.name)
+              touch: () => this.props.touch(field.name),
+              raw_update: update,
+              raw_touch: touch
             }
             return (
               <div key={i}>
