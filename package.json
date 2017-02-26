@@ -5,7 +5,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
     "babel": "babel ./src --out-dir ./lib",
-    "clean": "rimraf ./lib",
+    "clean": "rimraf ./lib/*",
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "sass": "cpx \"./src/**/*.scss\" ./lib"
