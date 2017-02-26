@@ -31,7 +31,7 @@ const num = (settings = {}) => {
     name: name,
     get: getPathnameValue(name),
     set: (value, data) => {
-      return setValue(processNumber(useValue), data)
+      return setValue(processNumber(value), data)
     },
     getInitial: () => initialValue,
     validate: (value = 0, data = {}) => {

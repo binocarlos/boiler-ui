@@ -7,7 +7,7 @@
   "scripts": {
     "release": "NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config ./webpack.config.prod --colors --profile --progress",
     "watch": "NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
-    "serve": "ecstatic --root dist"
+    "serve": "ecstatic --root dist --port 80"
   },
   "dependencies": {
     "boiler-ui": "^1.0.4",
