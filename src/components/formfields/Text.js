@@ -1,12 +1,21 @@
 import React, { PropTypes, Component } from 'react'
 import Input from 'react-toolbox/lib/input'
 
-class Text extends Component {
+import theme from '../themes/TextField.scss'
 
+class Text extends Component {
   render() {
+
+    const inputTheme = this.props.settings.align == 'right' ?
+      {
+        inputElement: theme.rightAligned
+      } :
+      {}
+
     return (
       <Input 
-        type={ this.props.type || 'text' }
+        theme={inputTheme}
+        type={ 'text' }
         spellCheck={false}
         disabled={ this.props.readonly }
         label={ this.props.title } 

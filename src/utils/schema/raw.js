@@ -23,8 +23,6 @@ const raw = (settings = {}) => {
   const validate = settings.validate
   const initialValue = settings.initialValue || null
 
-  const setValue = setPathnameValue(name)
-
   return {
     name: name,
     get: settings.get || getPathnameValue(name),

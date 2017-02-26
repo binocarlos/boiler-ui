@@ -28,8 +28,9 @@ const select = (settings = {}) => {
   return {
     name: settings.name,
     title: settings.title || ucfirst(settings.name),
-    get: getPathnameValue(settings.name),
+    get: settings.get || getPathnameValue(settings.getname || settings.name),
     compare: stringCompare,
+    settings: settings,
     getComponent: (props) => {
       const selector = (state) => {
         let options = settings.selector(state) || []

@@ -13,11 +13,11 @@ export const stringCompare = (a, b) => a == b
 export const objCompare = (a, b) => a === b
 
 export const processNumber = (n) => {
-  const numValue = parseFloat(n)
+  const numericValue = parseFloat(n)
 
-  return isNaN(numValue) ?
-    0 :
-    numValue
+  return isNaN(numericValue) ?
+    n :
+    numericValue
 }
 
 // round to 2dp

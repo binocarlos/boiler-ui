@@ -17,6 +17,7 @@ export const mapFormField = (field, data, meta, originalData, form_touched) => {
             title: mappedField.title,
             error: mappedField.error,
             value: mappedField.value,
+            settings: mappedField.settings,
             update: value => props.raw_update(groupField.name, value),
             touch: () => props.raw_touch(groupField.name)
           }
@@ -40,6 +41,7 @@ export const mapFormField = (field, data, meta, originalData, form_touched) => {
       getComponent: field.getComponent,
       name: field.name,
       title: field.title,
+      settings: field.settings,
       value,
       error
     }  

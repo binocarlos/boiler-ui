@@ -23,10 +23,11 @@ const raw = (settings = {}) => {
   return {
     name: settings.name,
     title: settings.title || ucfirst(settings.name),
-    get: settings.get || getPathnameValue(settings.name),
+    get: settings.get || getPathnameValue(settings.getname || settings.name),
     compare: (a, b) => a === b,
     getComponent: settings.getComponent,
-    group: settings.group
+    group: settings.group,
+    settings: settings
   }
 }
 
