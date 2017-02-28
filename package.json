@@ -1,6 +1,6 @@
 {
   "name": "boiler-ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "common ui components for frontend apps",
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run sass && npm run babel",
