@@ -7,7 +7,8 @@ const ListPluginReducer = (actions) => {
   return combineReducers({
     list: ApiReducer(actions.list.types),
     data: ListReducer({
-      update: actions.list.types.success
+      update: actions.list.types.success,
+      reorder: actions.reorder.types.set
     })
   })
 }

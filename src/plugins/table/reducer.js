@@ -13,7 +13,8 @@ const TableReducer = (actions) => {
     // this reduces the result from the list.success
     // action and maps it into a table structure
     data: ListReducer({
-      update: actions.list.types.success
+      update: actions.list.types.success,
+      reorder: actions.reorder.types.set
     })
   })
 }

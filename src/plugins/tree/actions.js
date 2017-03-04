@@ -1,5 +1,6 @@
 import ApiActions from '../../actions/api'
 import TriggerActions from '../../actions/trigger'
+import ValueActions from '../../actions/value'
 import ItemDataActions from '../../actions/itemdata'
 import RouterActions from '../../actions/router'
 
@@ -8,6 +9,7 @@ const TreeActions = (base) => {
 
   const actions = {
     list: ApiActions(base + '_LIST'),
+    reorder: ValueActions(base + '_REORDER'),
     toggle: ItemDataActions(base + '_TOGGLE'),
     openAncestors: TriggerActions(base + '_OPEN_ANCESTORS'),
     reload: TriggerActions(base + '_RELOAD'),

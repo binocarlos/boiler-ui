@@ -11,7 +11,8 @@ const TreeReducer = (actions) => {
       root: true
     }),
     data: ListReducer({
-      update: actions.list.types.success
+      update: actions.list.types.success,
+      reorder: actions.reorder.types.set
     })
   })
 }

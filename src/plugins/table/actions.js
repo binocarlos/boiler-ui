@@ -7,6 +7,7 @@ import RouterActions from '../../actions/router'
 const TableActions = (base) => {
   const actions = {
     list: ApiActions(base + '_LIST'),
+    reorder: ValueActions(base + '_REORDER'),
     delete: ApiActions(base + '_DELETE'),
     selection: ValueActions(base + '_SELECTION'),
     deleteWindow: ToggleActions(base + '_DELETE_WINDOW'),

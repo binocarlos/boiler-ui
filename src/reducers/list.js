@@ -6,11 +6,14 @@ export const DEFAULT_STATE = {
   // the database of id -> data
   db: {},
   // the array of ids dictating order
-  ids: []
+  ids: [],
+  // keep the original order so we can change it
+  originalIds: []
 }
 
 const REQUIRED_TYPES = [
-  'update'
+  'update',
+  'reorder'
 ]
 
 const ListReducer = (types = {}) => {
@@ -36,6 +39,16 @@ const ListReducer = (types = {}) => {
           },
           ids: {
             $set: ids
+          },
+          originalIds: {
+            $set: ids
+          }
+        })
+
+      case types.reorder:
+        return update(state, {
+          ids: {
+            $set: action.value || []
           }
         })
 
