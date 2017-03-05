@@ -1,6 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import utils from '../utils/utils';
+
+export const inputTypeForPrototype = (prototype) => {
+  if (prototype === Date) return 'date';
+  if (prototype === Number) return 'number';
+  if (prototype === Boolean) return 'checkbox';
+  return 'text';
+};
+
+export const prepareValueForInput = (value, type) => {
+  if (type === 'date') return new Date(value).toISOString().slice(0, 10);
+  if (type === 'checkbox') {
+    return value ? 'on' : '';
+  }
+  return value;
+};
 
 const factory = (Checkbox) => {
   class TableRow extends Component {
@@ -73,8 +87,8 @@ const factory = (Checkbox) => {
 
     renderInput (key, value) {
       const index = this.props.index;
-      const inputType = utils.inputTypeForPrototype(this.props.model[key].type);
-      const inputValue = utils.prepareValueForInput(value, inputType);
+      const inputType = inputTypeForPrototype(this.props.model[key].type);
+      const inputValue = prepareValueForInput(value, inputType);
       const checked = inputType === 'checkbox' && value ? true : null;
 
       if (inputType === 'text') {

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import Table from 'react-toolbox/lib/table'
+import CustomTable from './Table/index.js'
 import Dialog from 'react-toolbox/lib/dialog'
 
 const defaultGetTitle = (item) => (item || {}).name
@@ -30,7 +30,7 @@ class TableComponent extends Component {
 
     return (
       <div style={{height:'100%'}}>
-        <Table
+        <CustomTable
           heading={ this.props.heading }
           model={ tableFields }
           onSelect={ this.props.select }
