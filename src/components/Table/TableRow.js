@@ -81,7 +81,7 @@ const factory = (Checkbox) => {
       if (onChange) {
         return this.renderInput(key, value);
       } else if (value) {
-        return value.toString() + this.props.rowConfig.append
+        return value.toString()
       }
     }
 
