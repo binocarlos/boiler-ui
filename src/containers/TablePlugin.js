@@ -48,7 +48,7 @@ class TablePlugin extends Component {
       rawdata: this.props.data,
       tableFields: this.props.table.schema,
       getItemTitle: getItemTitle
-    }, this.props.getTableProps ? this.props.getTableProps(this.props) : {})
+    })
 
     const toolbarProps = Object.assign({}, this.props, {
       title: toolbarTitle,

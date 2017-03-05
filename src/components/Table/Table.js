@@ -102,6 +102,7 @@ const factory = (TableHead, TableRow) => {
               selectable={selectable}
               selected={selected.indexOf(index) !== -1}
               theme={theme}
+              rowConfig={this.props.rowConfig || {}}
             />
           ))}
         </tbody>

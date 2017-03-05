@@ -28,18 +28,25 @@ class TableComponent extends Component {
       deleteTitle = deleteTitles[0]
     }
 
+    const baseProps = {
+      heading: this.props.heading,
+      model: tableFields,
+      onSelect: this.props.select,
+      selectable: data.length > 0,
+      multiSelectable: true,
+      selected: this.props.selection,
+      source: data
+    }
+
+    const extraProps = this.props.getExtraProps ?
+      this.props.getExtraProps(baseProps) :
+      {}
+
+    const finalProps = Object.assign({}, baseProps, extraProps)
+
     return (
       <div style={{height:'100%'}}>
-        <CustomTable
-          heading={ this.props.heading }
-          model={ tableFields }
-          onSelect={ this.props.select }
-          selectable={ data.length > 0 }
-          multiSelectable
-          selected={ this.props.selection }
-          theme={ this.props.theme }
-          source={ data }
-        />
+        <CustomTable {...finalProps} />
         <Dialog
           actions={[
             { label: "Cancel", icon: 'cancel', onClick: this.props.closeDeleteWindow },
