@@ -23,6 +23,7 @@ class TreePlugin extends Component {
         toggleState={this.props.toggleState}
         getItemTitle={this.props.getItemTitle}
         getIcon={this.props.getIcon}
+        config={this.props.config}
       />
     )
   }

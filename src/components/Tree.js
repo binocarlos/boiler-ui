@@ -82,17 +82,38 @@ class TreeComponent extends Component {
           <FontIcon style={item.id == this.props.active ? {color: 'deepskyblue'} : {}} value={this.props.getIcon(item)} />
         )
 
+      const listItem = (
+        <ListItem
+          selectable={true}
+          ripple={true}
+          className='selectedTreeItem'
+          caption={title}
+          leftIcon={leftIcon}
+          onClick={() => this.props.view(item.id)}
+          rightActions={[arrowButton]}
+        />
+      )
+
+      const config = this.props.config || {}
+
+      let listNode = listItem
+
+      const NodeWrapper = config.NodeWrapper
+
+      if(NodeWrapper) {
+        listNode = (
+          <NodeWrapper
+            item={ item }
+            config={ config }
+          >
+            { listItem }
+          </NodeWrapper>
+        )
+      }
+
       return (
         <div key={i} style={{paddingLeft: (item.level * 10) + 'px'}}>
-          <ListItem
-            selectable={true}
-            ripple={true}
-            className='selectedTreeItem'
-            caption={title}
-            leftIcon={leftIcon}
-            onClick={() => this.props.view(item.id)}
-            rightActions={[arrowButton]}
-          />
+          { listNode }
         </div>
       )
     })
