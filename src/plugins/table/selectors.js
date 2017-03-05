@@ -16,11 +16,13 @@ export const TableSelectors = (raw) => {
       const selectedItems = selection.map(i => data[i])
       const isDeleteWindowOpen = selectors.deleteWindowOpen(state)
       const error = selectors.error(state)
+      const originalIds = dataSelector(state).originalIds
 
       return {
         data,
         selection,
         selectedItems,
+        originalIds,
         isDeleteWindowOpen,
         error
       }
