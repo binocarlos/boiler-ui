@@ -94,6 +94,7 @@ const factory = (TableHead, TableRow) => {
           {source.map((data, index) => (
             <RowClass
               data={data}
+              allData={source}
               index={index}
               key={index}
               model={model}
@@ -103,7 +104,7 @@ const factory = (TableHead, TableRow) => {
               selectable={selectable}
               selected={selected.indexOf(index) !== -1}
               theme={theme}
-              rowConfig={this.props.rowConfig || {}}
+              config={this.props.rowConfig || {}}
             />
           ))}
         </tbody>
