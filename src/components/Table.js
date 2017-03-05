@@ -37,6 +37,7 @@ class TableComponent extends Component {
           selectable={ data.length > 0 }
           multiSelectable
           selected={ this.props.selection }
+          theme={ this.props.theme }
           source={ data }
         />
         <Dialog
