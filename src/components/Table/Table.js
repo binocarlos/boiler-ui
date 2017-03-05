@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { themr } from 'react-css-themr'
 const TABLE = 'RTTable'
 
-import InjectCheckbox from 'react-toolbox/lib/checkbox/Checkbox.js'
+import InjectCheckbox from 'react-toolbox/lib/checkbox'
 import tableHeadFactory from './TableHead.js';
 import tableRowFactory from './TableRow.js';
 
@@ -88,10 +88,11 @@ const factory = (TableHead, TableRow) => {
 
     renderBody () {
       const { source, model, onChange, selectable, selected, theme } = this.props;
+      const RowClass = this.props.RowClass ? this.props.RowClass : TableRow
       return (
         <tbody>
           {source.map((data, index) => (
-            <TableRow
+            <RowClass
               data={data}
               index={index}
               key={index}
@@ -129,4 +130,4 @@ const Table = factory(TableHead, TableRow);
 
 export default themr(TABLE)(Table);
 export { factory as tableFactory };
-export { Table };
+export { Table, TableHead, TableRow };
