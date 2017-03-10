@@ -57,8 +57,9 @@ class TreeComponent extends Component {
       // if the root is open then add the folders
       if(this.isNodeOpen('root')) {
         allItems = allItems.concat(rootItems)
-        rootNode.children = rootItems
       }
+
+      rootNode.children = rootItems
     }
     else {
       allItems = rootItems
