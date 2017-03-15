@@ -6,13 +6,7 @@ const factory = (Checkbox) => {
     const contentCells = Object.keys(model).map((key) => {
       const name = model[key].title || key;
       let style = {}
-      const w = model[key].width
       const align = model[key].align
-      if(w) {
-        style.maxWidth = w
-        style.minWidth = w
-        style.width = w
-      }
       if(align) {
         style.textAlign = align
       }

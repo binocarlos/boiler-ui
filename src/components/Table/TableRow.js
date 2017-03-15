@@ -66,7 +66,8 @@ const factory = (Checkbox) => {
 
     renderCells () {
       return Object.keys(this.props.model).map((key) => {
-        return <td key={key} onClick={this.props.onRowClick}>{this.renderCell(key)}</td>;
+        const modelField = this.props.model[key]
+        return <td width={ modelField.width } key={key} onClick={this.props.onRowClick}>{this.renderCell(key)}</td>;
       });
     }
 
