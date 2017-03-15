@@ -25,7 +25,11 @@ class TreeComponent extends Component {
     let children = []
 
     if(toggleState[item.id]) {
-      children = (item.children || []).reduce((all, child) => {
+      const rawChildren = ((this.props.getChildren ?
+        this.props.getChildren(item) :
+        item.children) || [])
+      
+      children = rawChildren.reduce((all, child) => {
         return all.concat(this.getItems(child, level + 1))
       }, [])
     }
@@ -72,7 +76,11 @@ class TreeComponent extends Component {
         'arrow_drop_up' :
         'arrow_drop_down'
 
-      const arrowButton = item.children.length > 0 ?
+      const children = this.props.getChildren ?
+        this.props.getChildren(item) :
+        []
+
+      const arrowButton = children.length > 0 ?
         (
           <IconButton key="toggle" icon={rightIcon} onClick={() => this.props.toggle(item.id, isOpen ? false : true)}/>
         ) :

@@ -34,6 +34,14 @@ class FormPlugin extends Component {
 
     const FormComponent = this.props.FormComponent || Form
 
+    const form = (
+      <FormComponent {...formProps} />
+    )
+
+    if(this.props.noToolbar) {
+      return form
+    }
+
     const buttons = this.props.getButtons ?
       this.props.getButtons(this.props) :
       null
@@ -57,7 +65,7 @@ class FormPlugin extends Component {
 
     return (
       <PageLayout toolbar={toolbar}>
-        <FormComponent {...formProps} />
+        { form }
       </PageLayout>
     )
   }
