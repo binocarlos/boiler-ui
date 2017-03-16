@@ -7,7 +7,7 @@ class TreeLayout extends Component {
   render() {
     return (
       <Layout>
-        <SideDrawer>
+        <SideDrawer width={ this.props.width }>
           {this.props.tree}
         </SideDrawer>
         <Panel>

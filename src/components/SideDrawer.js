@@ -8,6 +8,7 @@ class SideDrawer extends Component {
 
     return (
       <NavDrawer 
+        width={ this.props.width }
         theme={theme}
         pinned
         scrollY
