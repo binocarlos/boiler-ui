@@ -7,12 +7,12 @@ class PageLayout extends Component {
   render() {
 
     return (
-      <Panel>
+      <Layout>
         {this.props.toolbar}
-        <Page padding={0}>
+        <Panel bodyScroll={ true }>
           {this.props.children}
-        </Page>
-      </Panel>
+        </Panel>
+      </Layout>
     )
   }
 }

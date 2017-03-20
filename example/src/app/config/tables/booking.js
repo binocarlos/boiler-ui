@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Chip from 'react-toolbox/lib/chip'
 import Avatar from 'react-toolbox/lib/avatar'
-import Button from 'react-toolbox/lib/button/Button'
+import Button from 'react-toolbox/lib/button'
 import Tooltip from 'react-toolbox/lib/tooltip'
 import Navigation from 'react-toolbox/lib/navigation'
 
@@ -27,7 +27,7 @@ const BOOKING_TABLE = {
           <Navigation type='horizontal'>
             <TooltipButton 
               tooltip='Delete'
-              ripple={false}
+              ripple={true}
               icon={ icons.delete }
               floating
               mini 
@@ -37,7 +37,7 @@ const BOOKING_TABLE = {
               }} />
             <TooltipButton 
               tooltip='Edit'
-              ripple={false}
+              ripple={true}
               icon={ icons.edit }
               floating
               mini 

@@ -26,6 +26,7 @@ class GenericToolbar extends Component {
       <AppBar 
         theme={theme}
         flat={true}
+        fixed={false}
       >
         <div style={STYLES.fillwidth}>
           <table cellPadding="0" cellSpacing="0" style={STYLES.fillwidth}><tbody><tr>

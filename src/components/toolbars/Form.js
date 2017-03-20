@@ -15,7 +15,7 @@ class FormToolbar extends Component {
           label={this.props.cancelTitle}
           icon={this.props.cancelIcon}
           onClick={this.props.cancel}
-          ripple={false}
+          ripple={true}
         />
          {
             this.props.readonly ? 
@@ -25,7 +25,7 @@ class FormToolbar extends Component {
                   label={this.props.revertTitle}
                   icon={this.props.revertIcon}
                   onClick={this.props.revert}
-                  ripple={false}
+                  ripple={true}
                 />
               )
           }
@@ -39,7 +39,7 @@ class FormToolbar extends Component {
                   onClick={this.props.submit}
                   raised={this.props.valid} 
                   primary={this.props.valid}
-                  ripple={false}
+                  ripple={true}
                 />
               )
           }

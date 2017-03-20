@@ -41,7 +41,10 @@ const user = {
   status: (query) => {
     return new Promise(resolve => {
       resolve({
-        loggedIn: false
+        loggedIn: true,
+        data: {
+          id: 1
+        }
       })
     })
   },
@@ -73,7 +76,29 @@ const BasicCrud = (map) => {
   }
 }
 
-const booking = BasicCrud(mapfns.booking)
+const FakeCrud = (map) => {
+  return {
+    list: (query) => new Promise(resolve => resolve([{
+      id: 1,
+      name: 'test'
+    },{
+      id: 2,
+      name: 'test2'
+    },{
+      id: 3,
+      name: 'test3'
+    },{
+      id: 4,
+      name: 'test4'
+    }])),
+    get: (query) => new Promise(resolve => resolve({})),
+    post: (query) => new Promise(resolve => resolve()),
+    put: (query) => new Promise(resolve => resolve()),
+    delete: (query) => new Promise(resolve => resolve())
+  }
+}
+
+const booking = FakeCrud(mapfns.booking)
 
 const apis = {
   user,

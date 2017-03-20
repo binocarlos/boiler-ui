@@ -1,5 +1,5 @@
 const CORE = {
-  title:'Farm Booking System',
+  title:'Example Boiler App',
   basepath:'/app'
 }
 

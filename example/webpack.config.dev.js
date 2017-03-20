@@ -22,6 +22,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.scss', '.css', '.js'],
     packageMains: ['browser', 'web', 'browserify', 'main', 'style'],
+    alias: { 'boiler-ui': path.resolve(__dirname + './../') },
     modulesDirectories: [
       'node_modules',
       path.resolve(__dirname, './node_modules')

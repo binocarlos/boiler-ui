@@ -50,6 +50,7 @@ export const routes = routeProcessor({
   '/about': {},
   '/login': guest({}),
   '/register': guest({}),
+  '/test': {},
   '/bookings': user({
     '/add': {
       api: 'post'
@@ -73,8 +74,7 @@ export const triggerHandlers = {
     plugins.booking.table.actions.list.request()
   ],
   addBooking: (state, initial) => [
-    plugins.booking.form.actions.fields.initialize({}),
-    plugins.booking.newData.action.request()
+    plugins.booking.form.actions.fields.initialize({})
   ],
   editBooking: (state, initial) => [
     plugins.booking.form.actions.fields.initialize({}),
@@ -157,13 +157,13 @@ export const redirectors = {
 
   // CLIENTS
   [plugins.booking.names.table]: {
-    add: (payload, state) => push(getRoute('/booking/add')),
-    edit: (payload, state) => push(getRoute('/booking/edit/' + payload.id))
+    add: (payload, state) => push(getRoute('/bookings/add')),
+    edit: (payload, state) => push(getRoute('/bookings/edit/' + payload.id))
   },
 
   [plugins.booking.names.form]: {
-    cancel: (payload, state) => push(getRoute('/booking')),
-    saved: (payload, state) => push(getRoute('/booking'))
+    cancel: (payload, state) => push(getRoute('/bookings')),
+    saved: (payload, state) => push(getRoute('/bookings'))
   }
 
 }

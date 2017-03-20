@@ -43,18 +43,16 @@ class Wrapper extends Component {
           close={ this.props.closeMenu }
           redirect={ menuRedirect }
         />
-        
-        <Panel>
-          <AppBar
-            title={ this.props.pageTitle }
-            leftIcon="menu"
-            onLeftIconClick={ this.props.openMenu }
-          >
-            <AppBarMenu />
-          </AppBar>
-          <div style={{ flex: 1, overflowY: 'auto' }}>
-            { this.props.children }
-          </div>
+        <AppBar
+          fixed
+          title={ this.props.pageTitle }
+          leftIcon="menu"
+          onLeftIconClick={ this.props.openMenu }
+        >
+          <AppBarMenu />
+        </AppBar>
+        <Panel bodyScroll={ true }>
+          { this.props.children }
         </Panel>
 
         { plugins.snackbar.getContainer() }
