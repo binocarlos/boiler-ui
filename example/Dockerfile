@@ -1,9 +1,8 @@
-FROM node:7
+FROM node:6.10.0
 MAINTAINER kaiyadavenport@gmail.com
 WORKDIR /app
-ADD ./package.json /app/package.json
+COPY ./package.json /app/package.json
 RUN npm install
-ADD . /app
-RUN npm run release
+COPY ./ /app
 ENTRYPOINT ["npm", "run"]
-CMD ["serve"]
+CMD ["watch"]

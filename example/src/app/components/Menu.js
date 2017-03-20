@@ -16,7 +16,7 @@ export class GuestMenu extends Component {
         items={guestMenu}
         hide={this.props.hide}
         redirect={this.props.redirect}
-        ripple={this.props.ripple}
+        ripple={true}
       />
     )
   }
@@ -29,7 +29,7 @@ export class UserMenu extends Component {
         items={userMenu}
         hide={this.props.hide}
         redirect={this.props.redirect}
-        ripple={this.props.ripple}
+        ripple={true}
       />
     )
   }
