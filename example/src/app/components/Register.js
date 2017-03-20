@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card'
-import Button from 'react-toolbox/lib/button/Button'
+import { Button } from 'react-toolbox/lib/button'
 
 import Page from 'boiler-ui/lib/components/Page'
 import FormFields from 'boiler-ui/lib/components/FormFields'

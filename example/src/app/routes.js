@@ -3,6 +3,8 @@ import { RelativeFragment as Fragment, AbsoluteFragment } from 'boiler-ui/lib/co
 import routerActions from 'boiler-ui/lib/actions/router'
 
 import Login from './containers/Login'
+import Register from './containers/Register'
+
 
 import BookingTable from './containers/BookingTable'
 import BookingForm from './containers/BookingForm'
@@ -47,6 +49,7 @@ export const routes = routeProcessor({
   '/help': {},
   '/about': {},
   '/login': guest({}),
+  '/register': guest({}),
   '/bookings': user({
     '/add': {
       api: 'post'
@@ -177,6 +180,10 @@ export const fragments = (relative) => {
 
       <Fragment forRoute={getRoute('/login')}>
         <Login />
+      </Fragment>
+
+      <Fragment forRoute={getRoute('/register')}>
+        <Register />
       </Fragment>
 
       <Fragment forRoute={getRoute('/help')}>

@@ -1,6 +1,6 @@
 const CORE = {
   title:'Farm Booking System',
-  basepath:'/admin'
+  basepath:'/app'
 }
 
 // test rebuild
