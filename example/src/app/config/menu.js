@@ -13,10 +13,8 @@ export const guest = [
 
 export const user = [
   ['Dashboard', icons.dashboard, getRoute('/')],
-  ['Companies', icons.installation, getRoute('/companies')],
-  ['Clients', icons.client, getRoute('/clients')],
-  ['Resources', icons.resource, getRoute('/resources')],
-  ['Projects', icons.project, getRoute('/projects')],
+  /*['Companies', icons.installation, getRoute('/companies')],*/
+  ['Bookings', icons.booking, getRoute('/bookings')],
   '-',
   ['Help', icons.help, getRoute('/help')],
   ['About', icons.about, getRoute('/about')],

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Menu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu'
-import Button from 'react-toolbox/lib/button'
+import { Button } from 'react-toolbox/lib/button'
 
 class ButtonMenu extends Component {
 

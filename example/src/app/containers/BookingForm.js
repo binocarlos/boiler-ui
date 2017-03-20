@@ -7,20 +7,20 @@ import formfields from '../config/formfields'
 import icons from '../config/icons'
 import plugins from '../plugins'
 
-class InstallationForm extends Component {
+class BookingForm extends Component {
   render() {
     return (
       <FormPlugin 
-        selector={plugins.installation.form.selectors.container}
-        dispatcher={plugins.installation.form.actions.dispatcher}
-        getFormFields={formfields.installation}
-        getIcon={() => icons.installation}
-        getItemTitle={plugins.installation.getItemTitle}
-        getMainTitle={plugins.installation.getFormTitle}
+        selector={plugins.booking.form.selectors.container}
+        dispatcher={plugins.booking.form.actions.dispatcher}
+        getFormFields={formfields.booking}
+        getIcon={() => icons.booking}
+        getItemTitle={plugins.booking.getItemTitle}
+        getMainTitle={plugins.booking.getFormTitle}
         getButtons={(props) => (<FormToolbar {...props} />)}
       />
     )
   }
 }
 
-export default InstallationForm
+export default BookingForm

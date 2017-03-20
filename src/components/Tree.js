@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { List, ListItem } from 'react-toolbox/lib/list'
 import Avatar from 'react-toolbox/lib/avatar'
 import FontIcon from 'react-toolbox/lib/font_icon'
-import {IconButton} from 'react-toolbox/lib/button'
-import theme from './themes/Tree.scss'
+import { IconButton } from 'react-toolbox/lib/button'
+import theme from './themes/Tree.css'
 
 class TreeComponent extends Component {
 

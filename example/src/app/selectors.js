@@ -9,21 +9,8 @@ export const parentIdRouteSelector = (state) => {
     parentid
 }
 
-export const currentInstallation = (state) => {
-  const id = plugins.user.selectors.status.currentInstallation(state)
-  const items = plugins.installation.table.selectors.items(state)
-  const current = items.filter(item => item.id == id)[0]
-  return current
-}
-
-export const resourceSearchValue = (state) => {
-  return state.resource.search.current.value
-}
-
 const selectors = {
-  parentIdRouteSelector,
-  currentInstallation,
-  resourceSearchValue
+  parentIdRouteSelector
 }
 
 export default selectors

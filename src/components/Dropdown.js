@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import UIDropdown from 'react-toolbox/lib/dropdown'
-import whitetheme from './themes/DropdownWhite.scss'
+import whitetheme from './themes/DropdownWhite.css'
 
 class Dropdown extends Component {
 

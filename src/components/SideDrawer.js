@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { NavDrawer } from 'react-toolbox/lib/layout'
-import theme from './themes/SideDrawer.scss'
+import theme from './themes/SideDrawer.css'
 
 class SideDrawer extends Component {
 

@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import Input from 'react-toolbox/lib/input'
 
-import theme from '../themes/TextField.scss'
+import theme from '../themes/TextField.css'
 
 class Text extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import Button from 'react-toolbox/lib/button'
+import { Button } from 'react-toolbox/lib/button'
 
 import ButtonMenu from '../ButtonMenu'
 import GenericToolbar from './Generic'

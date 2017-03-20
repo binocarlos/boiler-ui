@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { IconMenu as UIIconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu'
 import Chip from 'react-toolbox/lib/chip'
 import Avatar from 'react-toolbox/lib/avatar'
-import whitetheme from './themes/IconMenuWhite.scss'
+import whitetheme from './themes/IconMenuWhite.css'
 
 const STYLES = {
   container: {

@@ -7,20 +7,22 @@ import tables from '../config/tables'
 import icons from '../config/icons'
 import plugins from '../plugins'
 
-class ProjectTable extends Component {
+class BookingTable extends Component {
   render() {
     return (
       <TablePlugin 
-        selector={plugins.project.table.selectors.container}
-        dispatcher={plugins.project.table.actions.dispatcher}
-        table={tables.project}
-        getIcon={() => icons.project}
-        getItemTitle={plugins.project.getItemTitle}
-        mainTitle={plugins.project.getTableTitle()}
+        selector={[
+          plugins.booking.table.selectors.container
+        ]}
+        dispatcher={plugins.booking.table.actions.dispatcher}
+        table={tables.booking}
+        getIcon={() => icons.booking}
+        getItemTitle={plugins.booking.getItemTitle}
+        mainTitle={plugins.booking.getTableTitle()}
         getToolbar={(props) => (<TableToolbar {...props} />)}
       />
     )
   }
 }
 
-export default ProjectTable
+export default BookingTable

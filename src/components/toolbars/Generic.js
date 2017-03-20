@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import AppBar from 'react-toolbox/lib/app_bar'
 import Navigation from 'react-toolbox/lib/navigation'
-import {IconButton} from 'react-toolbox/lib/button'
-import theme from '../themes/PanelBar.scss'
+import { IconButton } from 'react-toolbox/lib/button'
+
+import theme from '../themes/PanelBar.css'
 
 const STYLES = {
   inline: {

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import CustomTable from './Table/index.js'
+import Table from 'react-toolbox/lib/table'
 import Dialog from 'react-toolbox/lib/dialog'
 
 const defaultGetTitle = (item) => (item || {}).name
@@ -46,7 +46,7 @@ class TableComponent extends Component {
 
     return (
       <div style={{height:'100%'}}>
-        <CustomTable {...finalProps} />
+        <Table {...finalProps} />
         <Dialog
           actions={[
             { label: "Cancel", icon: 'cancel', onClick: this.props.closeDeleteWindow },

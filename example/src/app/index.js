@@ -1,4 +1,3 @@
-import 'react-toolbox/lib/commons.scss'
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 

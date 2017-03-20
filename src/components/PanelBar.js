@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import AppBar from 'react-toolbox/lib/app_bar'
-import theme from './themes/PanelBar.scss'
+import theme from './themes/PanelBar.css'
 
 class PanelBar extends Component {
 

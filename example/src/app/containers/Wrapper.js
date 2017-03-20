@@ -50,7 +50,6 @@ class Wrapper extends Component {
             leftIcon="menu"
             onLeftIconClick={ this.props.openMenu }
           >
-            { plugins.installationDropdown.getContainer() }
             <AppBarMenu />
           </AppBar>
           <div style={{ flex: 1, overflowY: 'auto' }}>
@@ -91,7 +90,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(
+export default  connect(
   mapStateToProps,
   mapDispatchToProps
 )(Wrapper)

@@ -6,21 +6,19 @@ const icons = {
   logout: 'exit_to_app',
   login: 'account_circle',
   register: 'create',
-  installation: 'copyright',
   cancel: 'clear',
   revert: 'undo',
   save: 'send',
   add: 'add',
+  edit: 'create',
+  delete: 'delete',
+  folder_open: 'keyboard_arrow_right',
+  view: 'visibility',
   actions: 'more_vert',
-  client: 'people',
-  project: 'location_city',
-  resource: 'build',
-  labour: 'face',
-  material: 'gavel',
   folder: 'folder',
-  item: 'label',
-  disk: 'inbox',
-  template: 'dns'
+  folderadd: 'create_new_folder',
+  settings: 'settings',
+  booking: 'date_range'
 }
 
 export default icons

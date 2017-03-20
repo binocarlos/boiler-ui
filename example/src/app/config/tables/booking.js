@@ -1,35 +1,24 @@
 import React, { Component, PropTypes } from 'react'
 import Chip from 'react-toolbox/lib/chip'
 import Avatar from 'react-toolbox/lib/avatar'
-import { Button } from 'react-toolbox/lib/button'
+import Button from 'react-toolbox/lib/button/Button'
 import Tooltip from 'react-toolbox/lib/tooltip'
 import Navigation from 'react-toolbox/lib/navigation'
-
-import IconBadge from 'boiler-ui/lib/components/IconBadge'
 
 import icons from '../icons'
 
 const TooltipButton = Tooltip(Button)
 
-const PROJECT_TABLE = {
+const BOOKING_TABLE = {
   schema: {
     name: {type: String},
-    client: {type: String},
     actions: {}
   },
   map: (props) => (item, i) => {
-    const clients = props.clients
-    const client = clients[item.clientid] || {}
-
+    
     return {
       id: item.id,
-      name: (
-        <IconBadge
-          name={item.name}
-          icon={icons.project}
-        />
-      ),
-      client: client.name,
+      name: item.name,
       actions: (
         <div style={{
           display: 'flex',
@@ -39,7 +28,7 @@ const PROJECT_TABLE = {
             <TooltipButton 
               tooltip='Delete'
               ripple={false}
-              icon='delete'
+              icon={ icons.delete }
               floating
               mini 
               onClick={() => {
@@ -49,7 +38,7 @@ const PROJECT_TABLE = {
             <TooltipButton 
               tooltip='Edit'
               ripple={false}
-              icon='create'
+              icon={ icons.edit }
               floating
               mini 
               onClick={() => {
@@ -62,4 +51,4 @@ const PROJECT_TABLE = {
   }
 }
 
-export default PROJECT_TABLE
+export default BOOKING_TABLE

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { IconMenu as UIIconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu'
-import whitetheme from './themes/IconMenuWhite.scss'
+import whitetheme from './themes/IconMenuWhite.css'
 
 class IconMenu extends Component {
 

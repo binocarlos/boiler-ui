@@ -17,15 +17,8 @@ const getSagas = (apis = {}) => {
 
     plugins.user.saga,
     plugins.snackbar.saga,
-    plugins.installation.table.saga,
-    plugins.installation.form.saga,
-    plugins.installation.activate.saga,
-    plugins.installationDropdown.saga,
-    plugins.client.table.saga,
-    plugins.client.form.saga,
-    plugins.client.newData.saga,
-    plugins.project.table.saga,
-    plugins.project.form.saga,
+    plugins.booking.table.saga,
+    plugins.booking.form.saga,
     RouteTriggerSaga({
       getRouteActions,
       userLoadedActionType: actions.user.status.api.types.success
@@ -37,7 +30,7 @@ const getSagas = (apis = {}) => {
       redirectors
     })
 
-  ].concat(plugins.resource.sagas)
+  ]
 }
 
 export default getSagas

@@ -1,13 +1,7 @@
-import installation from './installation'
-import client from './client'
-import resource from './resource'
-import project from './project'
+import booking from './booking'
 
 const TABLES = {
-  installation,
-  client,
-  resource,
-  project
+  booking
 }
 
 export default TABLES
