@@ -11,7 +11,12 @@ export const DEFAULT_STATE = {
   // the query object passed to the last request
   query:null,
   // the error if it occurred
-  error:null
+  error:null,
+  // optional if we keep the data here
+  // this is simpler but often you want the actual data to live
+  // somewhere else in your state tree
+  // opts.keepData = true must be set for this to be populated
+  payload:null
 }
 
 const REQUIRED_TYPES = [
@@ -20,7 +25,7 @@ const REQUIRED_TYPES = [
   'failure'
 ]
 
-const ApiReducer = (types = {}) => {
+const ApiReducer = (types = {}, opts = {}) => {
 
   deepCheck(types, REQUIRED_TYPES)
 
@@ -33,18 +38,27 @@ const ApiReducer = (types = {}) => {
             query: action.query,
             loading: true,
             loaded: false,
+            payload: null,
             error: null
           }
         })
 
       case types.success:
+
+        let newData = {
+          query: action.query,
+          loading: false,
+          loaded: true,
+          error: null,
+          payload: null
+        }
+
+        if(opts.keepData) {
+          newData.payload = action.payload
+        }
+
         return update(state, {
-          $merge:{
-            query: action.query,
-            loading: false,
-            loaded: true,
-            error: null
-          }
+          $merge:newData
         })
 
       case types.failure:
@@ -53,6 +67,7 @@ const ApiReducer = (types = {}) => {
             query: action.query,
             loading: false,
             loaded: true,
+            payload: null,
             error: action.payload
           }
         })
