@@ -36,6 +36,7 @@ const boilerapp = (settings = {}) => {
   const store = Store({
     reducer,
     routes,
+    basepath,
     middleware,
     initialState
   })

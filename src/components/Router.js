@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react'
-import { RelativeFragment as RouterRelative, AbsoluteFragment as RouterAbsolute } from 'redux-little-router'
+import { Fragment } from 'redux-little-router'
 
 export class RelativeFragment extends Component {
   render() {
     return (
-      <RouterRelative {...this.props}>
+      <Fragment {...this.props}>
         <div className='routeWrapper'>
           {this.props.children}
         </div>
-      </RouterRelative>
+      </Fragment>
     )
   }
 }
@@ -16,11 +16,11 @@ export class RelativeFragment extends Component {
 export class AbsoluteFragment extends Component {
   render() {
     return (
-      <RouterAbsolute {...this.props}>
+      <Fragment {...this.props}>
         <div className='routeWrapper'>
           {this.props.children}
         </div>
-      </RouterAbsolute>
+      </Fragment>
     )
   }
 }

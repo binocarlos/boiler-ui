@@ -22,7 +22,7 @@
     "react-redux": "^5.0.1",
     "react-toolbox": "^2.0.0-beta.5",
     "redux": "^3.6.0",
-    "redux-little-router": "^12.1.1",
+    "redux-little-router": "^13.0.0",
     "redux-logger": "^2.7.4",
     "redux-saga": "^0.13.0"
   },
