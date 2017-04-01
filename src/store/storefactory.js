@@ -13,8 +13,7 @@ const configureStore = (opts = {}) => {
   const sagaMiddleware = createSagaMiddleware()
 
   const littleRouter = routerForBrowser({
-    routes,
-    basename: opts.basepath
+    routes
   })
 
   const finalMiddleware = [
