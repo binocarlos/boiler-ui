@@ -8,9 +8,14 @@ class Fragment extends Component {
 }
 
 export default connect(
-  (state) => {
+  (state, ownProps) => {
+    const forRoute = ownProps.forRoute || ''
+    const currentRoute = state.router.route
+    let visible = false
+    if(ownProps.exact && forRoute == currentRoute) visible = true
+    if(!ownProps.exact && currentRoute.indexOf(forRoute) == 0) visible = true
     return {
-      visible: false
+      visible
     }
   },
   (dispatch) => {
