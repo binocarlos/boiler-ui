@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { NavDrawer } from 'react-toolbox/lib/layout'
-import theme from './themes/SideDrawer.css'
 
 class SideDrawer extends Component {
 
@@ -9,11 +8,11 @@ class SideDrawer extends Component {
     return (
       <NavDrawer 
         width={ this.props.width }
-        theme={theme}
-        pinned
+        pinned={true}
+        clipped={true}
         scrollY
       >
-      {this.props.children}
+        {this.props.children}
       </NavDrawer>
     )
   }

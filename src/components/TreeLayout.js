@@ -10,8 +10,8 @@ class TreeLayout extends Component {
         <SideDrawer width={ this.props.width }>
           {this.props.tree}
         </SideDrawer>
-        <Panel>
-        {this.props.children}
+        <Panel bodyScroll={ true }>
+          {this.props.children}
         </Panel>
       </Layout>
     )

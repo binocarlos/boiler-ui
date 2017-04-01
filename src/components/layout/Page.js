@@ -7,12 +7,14 @@ class PageLayout extends Component {
   render() {
 
     return (
-      <Layout>
-        {this.props.toolbar}
-        <Panel bodyScroll={ true }>
+      <div>
+        <div style={{display:'fixed'}}>
+          {this.props.toolbar}
+        </div>
+        <div>
           {this.props.children}
-        </Panel>
-      </Layout>
+        </div>
+      </div>
     )
   }
 }
