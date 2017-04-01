@@ -1,21 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { Layout, Panel } from 'react-toolbox/lib/layout'
-import SideDrawer from './SideDrawer'
+import NewTreeLayout from './layout/Tree'
 
-class TreeLayout extends Component {
-  render() {
-    return (
-      <Layout>
-        <SideDrawer width={ this.props.width }>
-          {this.props.tree}
-        </SideDrawer>
-        <Panel bodyScroll={ true }>
-          {this.props.children}
-        </Panel>
-      </Layout>
-    )
-  }
-}
-
-export default TreeLayout
+export default NewTreeLayout

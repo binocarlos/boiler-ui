@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Form from '../components/Form'
 import GenericToolbar from '../components/toolbars/Generic'
-import PageLayout from '../components/layout/Page'
+import ToolbarLayout from '../components/layout/Toolbar'
 
 import {
   getItemTitle
@@ -64,9 +64,9 @@ class FormPlugin extends Component {
     )
 
     return (
-      <PageLayout toolbar={toolbar}>
+      <ToolbarLayout toolbar={toolbar}>
         { form }
-      </PageLayout>
+      </ToolbarLayout>
     )
   }
 }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Table from '../components/Table'
 import GenericToolbar from '../components/toolbars/Generic'
-import PageLayout from '../components/layout/Page'
+import ToolbarLayout from '../components/layout/Toolbar'
 
 import {
   mergeSelectors,
@@ -67,9 +67,9 @@ class TablePlugin extends Component {
       )
 
     return (
-      <PageLayout toolbar={toolbar}>
+      <ToolbarLayout toolbar={toolbar}>
         <TableComponent {...tableProps} />
-      </PageLayout>
+      </ToolbarLayout>
     )
   }
 }
