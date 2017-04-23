@@ -40,7 +40,7 @@ const ApiSagaFactory = (settings = {}) => {
       yield put(actions.success(action.query, results))
     } catch (e) {
       let message = e.message
-
+      
       // we want to notify the user of HTTP type errors
       // so they know the network is broken or whatever
       if(e.response) {

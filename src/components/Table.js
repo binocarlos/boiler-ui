@@ -4,6 +4,7 @@ import { Table, TableHead, TableRow, TableCell } from 'react-toolbox/lib/table'
 import Dialog from 'react-toolbox/lib/dialog'
 
 const defaultGetTitle = (item) => (item || {}).name
+const noop = () => {}
 
 class TableComponent extends Component {
 
@@ -54,8 +55,8 @@ class TableComponent extends Component {
 
   render() {
 
-    const data = this.props.data
-    const selectedItems = this.props.selectedItems
+    const data = this.props.data || []
+    const selectedItems = this.props.selectedItems || []
     const selectedIds = selectedItems.map(item => item.id)
 
     const mainTitle = this.props.mainTitle
@@ -72,40 +73,33 @@ class TableComponent extends Component {
       deleteTitle = deleteTitles[0]
     }
 
-    const baseProps = {
-      heading: this.props.heading,
-      model: this.props.tableFields,
-      onSelect: this.props.select,
-      selectable: data.length > 0,
-      multiSelectable: true,
-      selected: this.props.selection,
-      source: data
-    }
+    const useSelectable = this.props.selectable == false ? false : true
+    const useMultiselectable = this.props.multiSelectable == true ? true : false
 
-    const extraProps = this.props.getExtraProps ?
-      this.props.getExtraProps(baseProps) :
-      {}
-
-    const finalProps = Object.assign({}, baseProps, extraProps)
-
-    return (
-      <div style={{height:'100%'}}>
-        <Table multiSelectable onRowSelect={ this.props.select }>
-          { this.getHead() }
-          { this.getBody() }
-        </Table>
+    const deleteWindow = this.props.confirmDelete ?
+      (
         <Dialog
           actions={[
-            { label: "Cancel", icon: 'cancel', onClick: this.props.closeDeleteWindow },
-            { label: "Delete", icon: 'delete', onClick: () => this.props.confirmDelete(selectedIds, deleteTitle) }
+            { label: "Cancel", icon: 'cancel', onClick: this.props.closeDeleteWindow || noop },
+            { label: "Delete", icon: 'delete', onClick: () => this.props.confirmDelete ? this.props.confirmDelete(selectedIds, deleteTitle) : noop() }
           ]}
-          active={ this.props.isDeleteWindowOpen }
-          onEscKeyDown={ this.props.closeDeleteWindow }
-          onOverlayClick={ this.props.closeDeleteWindow }
+          active={ this.props.isDeleteWindowOpen ? true : false }
+          onEscKeyDown={ this.props.closeDeleteWindow || noop }
+          onOverlayClick={ this.props.closeDeleteWindow || noop }
           title={ 'Delete ' + mainTitle + '?' }
         >
           <p>Are you sure you want to delete { deleteTitle } ?</p>
         </Dialog>
+      ) :
+      null
+
+    return (
+      <div style={{height:'100%'}}>
+        <Table selectable={ useSelectable } multiSelectable={ useMultiselectable } onRowSelect={ this.props.select || noop }>
+          { this.getHead() }
+          { this.getBody() }
+        </Table>
+        { deleteWindow }
       </div>
     )
   }
@@ -113,15 +107,15 @@ class TableComponent extends Component {
 
 TableComponent.propTypes = {
   data: PropTypes.array.isRequired,
-  selection: PropTypes.array.isRequired,
-  selectedItems: PropTypes.array.isRequired,
   tableFields: PropTypes.object.isRequired,
-  isDeleteWindowOpen: PropTypes.bool.isRequired,
+  selection: PropTypes.array,
+  selectedItems: PropTypes.array,
   getItemTitle: PropTypes.func,
   heading: PropTypes.bool,
-  select: PropTypes.func.isRequired,
-  closeDeleteWindow: PropTypes.func.isRequired,
-  confirmDelete: PropTypes.func.isRequired
+  select: PropTypes.func,
+  isDeleteWindowOpen: PropTypes.bool,
+  closeDeleteWindow: PropTypes.func,
+  confirmDelete: PropTypes.func
 }
 
 export default TableComponent
