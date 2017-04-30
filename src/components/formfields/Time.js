@@ -17,7 +17,7 @@ class TimeField extends Component {
         theme={inputTheme}
         disabled={ this.props.readonly }
         label={ this.props.title } 
-        value={ this.props.value || ''} 
+        value={ this.props.value }
         error={ this.props.error }
         onChange={ this.props.update }
       />

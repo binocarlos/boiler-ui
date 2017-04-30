@@ -1,5 +1,6 @@
 import immutable from 'object-path-immutable'
 import objectPath from 'object-path'
+import moment from 'moment'
 
 import { userStatusSelectors } from './plugins/user/selectors'
 
@@ -126,4 +127,19 @@ export const mergeDispatchers = (dispatch, dispatchers) => {
 export const developmentError = (e) => {
   if(process.env.NODE_ENV != 'development') return
   console.log(e.stack)
+}
+
+export const dateToSQL = (date, notime) => {
+  let d = moment(date)
+  d.second(0)
+  if(notime) {
+    return d.format('YYYY-MM-DD')
+  }
+  else {
+    return d.format('YYYY-MM-DD HH:mm:ss')
+  }
+}
+
+export const sqlToDate = (sql) => {
+  return new Date(moment(sql).millisecond())
 }

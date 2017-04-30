@@ -15,6 +15,7 @@
     "classnames": "^2.2.5",
     "deep-check-error": "^1.0.1",
     "immutability-helper": "^2.0.0",
+    "moment": "^2.18.1",
     "object-path-immutable": "^0.5.1",
     "pluralize": "^3.1.0",
     "react-addons-css-transition-group": "^15.4.2",
