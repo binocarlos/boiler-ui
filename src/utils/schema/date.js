@@ -25,7 +25,7 @@ const datefield = (settings = {}) => {
   const required = settings.required
   const minLength = settings.minLength
   const validate = settings.validate
-  const initialValue = settings.initialValue || new Date()
+  const initialValue = settings.initialValue || null
 
   const rawGet = getPathnameValue(name)
   const rawSet = setPathnameValue(name)
@@ -33,7 +33,9 @@ const datefield = (settings = {}) => {
   return {
     name: name,
     // value is an SQL string - turn it into a Date
-    get: (data) => sqlToDate(rawGet(data)),
+    get: (data) => {
+      return sqlToDate(rawGet(data))
+    },
     // value is a Date object - turn it into an SQL string
     set: (value, data) => rawSet(dateToSQL(value), data),
     getInitial: () => initialValue,
