@@ -15,6 +15,7 @@ class TimeField extends Component {
     return (
       <TimePicker 
         theme={inputTheme}
+        autoOk={ true }
         disabled={ this.props.readonly }
         label={ this.props.title } 
         value={ this.props.value }

@@ -15,9 +15,9 @@ class TreeLayout extends Component {
         >
           { this.props.tree }
         </NavDrawer>
-        <Panel bodyScroll={ false }>
+        <div className='routeWrapper'>
           { this.props.children }
-        </Panel>
+        </div>
       </Layout>
     )
   }
