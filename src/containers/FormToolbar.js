@@ -16,9 +16,17 @@ import {
 
 const defaultGetTitle = getItemTitle()
 
+const STYLES = {
+  error: {
+    color: '#ff0000',
+    textDecoration: 'underline',
+    padding: '10px'
+  }
+}
+
 class FormToolbar extends Component {
   render() {
-      
+
     const getItemTitle = this.props.getItemTitle || defaultGetTitle
     const icon = this.props.getIcon(this.props.data)
 
@@ -34,12 +42,20 @@ class FormToolbar extends Component {
       getItemTitle(this.props.originalData) :
       'New ' + mainTitle
 
+    const errorDiv = this.props.form_touched && !this.props.valid ?
+      (
+        <div style={ STYLES.error }>
+          the form has errors
+        </div>
+      ) : null
+
     return (
       <GenericToolbar 
         title={title}
         icon={icon}
+        rightChildren={errorDiv}
       >
-       {buttons}
+        {buttons}
       </GenericToolbar>
     )
   }
