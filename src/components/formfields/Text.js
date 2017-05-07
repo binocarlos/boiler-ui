@@ -23,6 +23,8 @@ class Text extends Component {
         error={ this.props.error }
         onChange={ this.props.update }
         onBlur={ this.props.touch }
+        multiline={ this.props.multiline }
+        rows={ this.props.rows }
       />
     )
   }
