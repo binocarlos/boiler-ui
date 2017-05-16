@@ -141,4 +141,10 @@ export const dateToSQL = (date, notime) => {
   }
 }
 
-export const sqlToDate = (sql) => sql ? new Date(moment.utc(sql).milliseconds()) : null
+export const sqlToDate = (value) => {
+  if(!value) return undefined
+  const m = moment.utc(value)
+  const d = new Date(m.toDate())
+  d.setHours(m.hour())
+  return d
+}
