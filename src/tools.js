@@ -131,7 +131,7 @@ export const developmentError = (e) => {
 
 export const dateToSQL = (date, notime) => {
   if(!date) return null
-  let d = moment(date)
+  let d = moment.utc(date)
   d.second(0)
   if(notime) {
     return d.format('YYYY-MM-DD')
@@ -141,4 +141,4 @@ export const dateToSQL = (date, notime) => {
   }
 }
 
-export const sqlToDate = (sql) => sql ? new Date(sql) : null
+export const sqlToDate = (sql) => sql ? new Date(moment.utc(sql).milliseconds()) : null
